@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="rootWindow" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.timeline.LoginController">
+   <center>
+      <VBox alignment="CENTER" maxHeight="600.0" maxWidth="400.0" prefHeight="275.0" prefWidth="400.0" spacing="20.0" BorderPane.alignment="BOTTOM_CENTER">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="277.0" prefWidth="400.0" spacing="10.0" styleClass="logInForm">
+               <children>
+                  <Label alignment="CENTER" prefHeight="66.0" prefWidth="400.0" styleClass="loginRegisterTitleBackground" text="LOGIN" textFill="#838383" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="incorrectCredentials" alignment="CENTER" minHeight="-Infinity" prefHeight="17.0" prefWidth="400.0" styleClass="registerLabels" text="Username and/or password is incorrect" textFill="RED" visible="false" VBox.vgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="-4.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="-17.0" top="-8.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="usernameID" maxWidth="277.0" prefWidth="277.0" promptText="Username">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <PasswordField fx:id="passwordID" maxWidth="277.0" prefWidth="277.0" promptText="Password">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </PasswordField>
+                  <Button fx:id="signInID" maxHeight="40.0" maxWidth="277.0" mnemonicParsing="false" onAction="#loginButtonClicked" prefHeight="40.0" prefWidth="277.0" text="Sign in" textFill="WHITE">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                  </Button>
+                  <Button id="registerBtn" fx:id="registerBtn" mnemonicParsing="false" onAction="#switchToRegister" text="Register">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="forgotPassBtn" mnemonicParsing="false" onAction="#handleForgotPassword" styleClass="forgotPassBtn" text="Forgot password?" />
+                  <Region prefHeight="10.0" prefWidth="200.0" />
+               </children>
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#070707" height="75.64" offsetX="10.0" offsetY="5.0" radius="46.427499999999995" width="112.07" />
+               </effect>
+            </VBox>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="OR" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Text>
+            <Button id="continueBtn" fx:id="continueBtn" mnemonicParsing="false" onAction="#switchToPrimaryWindow" text="Continue without logging in" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" height="71.1" offsetX="5.0" offsetY="5.0" radius="35.427499999999995" width="72.61" />
+               </effect>
+            </Button>
+            <Button id="quitBtn" mnemonicParsing="false" onAction="#exitButtonClicked" prefHeight="35.0" prefWidth="111.0" text="Quit" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <effect>
+                  <DropShadow height="58.95" offsetX="5.0" offsetY="5.0" radius="29.3525" width="60.46" />
+               </effect>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets top="200.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+   <styleClass>
+      <String fx:value="root" />
+      <String fx:value="loginRegisterWindow" />
+   </styleClass>
+</BorderPane>

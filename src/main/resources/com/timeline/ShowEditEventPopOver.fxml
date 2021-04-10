@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="editEventWindow" prefHeight="566.0" prefWidth="439.0" styleClass="root" stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.timeline.ShowEditEventController">
+    <children>
+        <TextField fx:id="nameEdit" layoutX="33.0" layoutY="216.0" prefHeight="27.0" prefWidth="372.0" promptText="Event Name" />
+        <TextField fx:id="timeEdit" layoutX="34.0" layoutY="253.0" prefHeight="27.0" prefWidth="372.0" promptText="Time" />
+        <AnchorPane layoutX="33.0" layoutY="273.0" minHeight="0.0" minWidth="0.0" prefHeight="61.0" prefWidth="370.0">
+            <children>
+                <TextArea fx:id="shortEdit" layoutX="1.0" layoutY="17.0" prefHeight="42.0" prefWidth="372.0" promptText="Short Description" wrapText="true" />
+            </children>
+        </AnchorPane>
+        <Pane fx:id="imagePane" layoutY="-2.0" prefHeight="199.0" prefWidth="439.0" style="-fx-background-color: #45648C;">
+            <children>
+                <ImageView fx:id="eventImageEdit" fitHeight="200.0" fitWidth="445.0" layoutX="-3.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                <Button fx:id="imageBrowse" layoutX="399.0" layoutY="158.0" mnemonicParsing="false" onAction="#addPicture" prefHeight="27.0" prefWidth="82.0" style="-fx-background-color: #ABD0F2#ABD0F2;" styleClass="add-button" text="+" />
+            </children>
+        </Pane>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutX="34.0" layoutY="342.0" prefHeight="97.0" prefWidth="372.0">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="93.0" prefWidth="370.0">
+                    <children>
+                        <TextArea fx:id="longEdit" prefHeight="97.0" prefWidth="372.0" promptText="Long Description" wrapText="true" />
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+        <Button id="edit-event-button" fx:id="saveButton" layoutX="143.0" layoutY="462.0" mnemonicParsing="false" onAction="#handleSaveEvent" prefHeight="29.0" prefWidth="210.0" text="Save Changes" />
+      <Button id="cancel-edit-button" fx:id="cancelEditButton" layoutX="166.0" layoutY="511.0" mnemonicParsing="false" onAction="#handleCancelEdit" prefHeight="27.0" prefWidth="282.0" text="Cancel" />
+    </children>
+</AnchorPane>

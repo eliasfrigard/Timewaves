@@ -1,0 +1,25 @@
+/* Dark theme */
+.mainBackground {
+    -fx-background-image: url("../images/darkTheme/BackgroundDark.png");
+    -fix-background-size: 100% 100%;
+}
+
+.toolBar {
+    -fx-background-image: url("../images/darkTheme/ToolbarBoxDark.png");
+    -fx-background-size: 100% 100%;
+}
+
+.toolButtons {
+    -fx-background-color: #747E91;
+    -fx-text-fill: WHITE;
+    -fx-font-size: 18px;
+    -fx-border-style: none;
+    -fx-background-radius: 0;
+    -fx-pref-width: 189px;
+    -fx-pref-height: 42px;
+    -fx-cursor: HAND;
+}
+
+.toolButtons:hover {
+    -fx-translate-y: 3;
+}

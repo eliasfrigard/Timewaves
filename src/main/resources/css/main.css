@@ -1,0 +1,217 @@
+.mainBackground {
+    -fx-background-image: url('../images/main/Background.png');
+    -fx-background-size: 100% 100%;
+}
+
+/**/
+.toolBar {
+    -fx-background-image: url('../images/main/Toolbar_Box.png');
+}
+
+.toolButtons {
+    -fx-background-color: #C2D2F2;
+    -fx-text-fill: WHITE;
+    -fx-font-size: 18px;
+    -fx-border-style: none;
+    -fx-background-radius: 0;
+    -fx-pref-width: 189px;
+    -fx-pref-height: 42px;
+    -fx-cursor: HAND;
+}
+
+.toolButtons:hover {
+    -fx-translate-y: 3;
+}
+
+#setAsToddButton {
+    -fx-pref-width: 250px;
+}
+
+/*Buttons for timelines*/
+.timeLineButton {
+    -fx-padding: 10px;
+    -fx-border-color: ghostwhite;
+    -fx-border-width: 1;
+    -fx-pref-width: 275;
+    -fx-pref-height: 61.6;
+    -fx-min-width: 250;
+    -fx-min-height: 61.6;
+    -fx-text-alignment: center;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: innershadow( gaussian , rgba(0,0,0,0.5) , 15,0,0,0 );
+}
+
+/*Hover effect for timeline-button*/
+.timeLineButton:hover {
+    -fx-opacity: 90%;
+}
+
+/*Set new with if user is admin*/
+.adminWidth {
+    -fx-pref-width: 240;
+}
+
+/*Colors for each timeline*/
+.button0 {
+    -fx-background-color: #7A30A6;
+}
+.button1 {
+    -fx-background-color: #70731F;
+}
+.button2 {
+    -fx-background-color: #A67D4B;
+}
+.button3 {
+    -fx-background-color: #DBD44B;
+}
+.button4 {
+    -fx-background-color: #615AA6;
+}
+.button5 {
+    -fx-background-color: #577FB3;
+}
+/* Style for timeline of the day when viewed in menu */
+.buttonTodd {
+
+    -fx-background-image: url('../images/TODDBTN.png');
+    -fx-font-family: Baskerville;
+    -fx-font-type: italic;
+    -fx-border-width: 3;
+    -fx-border-color: #78756B;
+    -fx-text-alignment: left;
+    -fx-text-fill: black;
+    -fx-effect: innershadow( gaussian , rgba(0,0,0,1) , 20,0,0,0 );
+}
+
+.buttonTodd:hover {
+    -fx-border-color: #577FB3;
+}
+
+/*Remove button for timeline*/
+.rmButton {
+    -fx-text-alignment: center;
+    -fx-start-margin: auto;
+    -fx-border-color: ghostwhite;
+    -fx-border-width: 1;
+    -fx-opacity: 80%;
+    -fx-background-color: #B32524;
+    -fx-pref-width: 35;
+    -fx-pref-height: 61.6;
+    -fx-min-width: 250;
+    -fx-min-height: 61.6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: innershadow( gaussian , rgba(0,0,0,0.5) , 15,0,0,0 );
+}
+
+/*Hover effect for remove-button*/
+.rmButton:hover {
+    -fx-opacity: 100%;
+}
+
+/*Menu-button*/
+.menuButton {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+    -fx-cursor: HAND;
+}
+
+/*Hover effect for menu-button*/
+.menuButton:hover {
+    -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+    -fx-background-insets: 0 0 -1 0, 0, 1, 2;
+    -fx-background-radius: 3px, 3px, 2px, 1px;
+    -fx-padding: 0.333333em 0.666667em 0.333333em 0.666667em; /* 4 8 4 8 */
+    -fx-text-fill: -fx-text-base-color;
+    -fx-alignment: CENTER;
+    -fx-content-display: LEFT;
+}
+
+/*Transparent button used for sign-in and quit button*/
+.transBtn {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+    -fx-cursor: HAND;
+}
+
+/*Hover effect for transparent button*/
+.transBtn:hover {
+    -fx-translate-x: 5;
+}
+
+.userText {
+}
+
+.noTimelines {
+    -fx-font-weight: bold;
+}
+
+.diamond {
+    -fx-position: absolute;
+    -fx-rotate: 45;
+    -fx-stroke: BLACK;
+    -fx-stroke-width: 1;
+    -fx-cursor: HAND;
+}
+
+.diamond:hover {
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+    -fx-effect: dropshadow(one-pass-box, darkgray, 10, 0.5, 0, 0);
+}
+
+.adminMenuButtons {
+    -fx-padding: 10px;
+    -fx-border-color: ghostwhite;
+    -fx-border-width: 1;
+    -fx-pref-width: 200;
+    -fx-pref-height: 61.6;
+    -fx-min-width: 200;
+    -fx-min-height: 61.6;
+    -fx-text-alignment: center;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.adminMenuButtons:hover {
+    -fx-opacity: 70%;
+}
+
+.isAdminButton {
+    -fx-background-color: #80A690;
+    -fx-effect: innershadow( gaussian , rgba(0,0,0,0.5) , 15,0,0,0 );
+}
+
+.notAdminButton {
+    -fx-background-color: #A6736F;
+    -fx-effect: innershadow( gaussian , rgba(0,0,0,0.1) , 5,0,0,0 );
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.polygon-right {
+    -fx-background-color: #45648C;
+    -fx-fill: #45648C;
+}
+.polygon-right:hover {
+    -fx-fill: #ABD0F2;
+    -fx-translate-x: 1.2;
+    -fx-effect: dropshadow(one-pass-box, darkgray, 20, 0.5, 0, 0);
+}
+.polygon-left {
+    -fx-fill: #45648C;
+}
+
+.polygon-left:hover {
+    -fx-fill: #ABD0F2;
+    -fx-translate-x: -1.2;
+    -fx-effect: dropshadow(one-pass-box, darkgray, 20, 0.5, 0, 0);
+}

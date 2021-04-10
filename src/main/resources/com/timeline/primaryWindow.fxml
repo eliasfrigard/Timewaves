@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.Double?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import com.timeline.customNodes.RatingBox?>
+
+<BorderPane fx:id="rootPane" maxHeight="1024.0" maxWidth="1440.0" minHeight="1024.0" minWidth="1440.0" prefHeight="1024.0" prefWidth="1440.0" stylesheets="@../../css/main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.timeline.PrimaryWindowController">
+    <bottom>
+        <Pane fx:id="exportPane" prefHeight="934.0" prefWidth="1440.0" styleClass="mainBackground" BorderPane.alignment="CENTER">
+            <AnchorPane onMouseClicked="#hideMenu" prefHeight="935.0" prefWidth="1439.0" style="-fx-background-color: transparent;">
+                <RatingBox fx:id="ratingBox"/>
+                <ImageView fx:id="toddImg" fitHeight="155.0" fitWidth="310.0" layoutX="597.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                    <Image url="@../../images/TODD.png" />
+                </ImageView>
+                <Button fx:id="setAsToddButton" layoutX="1069.0" layoutY="15.0" mnemonicParsing="false" onAction="#setAsTodd" styleClass="toolButtons" text="Set as timeline of the day" />
+
+                <Pane fx:id="eventPane" layoutY="413.0" prefHeight="202.0" prefWidth="1440.0" style="-fx-background-color: transparent;" />
+
+
+                <ScrollPane fx:id="timelineScrollPane" fitToHeight="true" hbarPolicy="NEVER" layoutY="200.0" prefHeight="536.0" prefViewportHeight="202.0" prefViewportWidth="1440.0" prefWidth="1440.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER">
+                    <Group>
+                        <Pane fx:id="timelineLinePane" minWidth="-Infinity" prefHeight="200.0" style="-fx-background-color: transparent;">
+                            <Text fx:id="endUnitTag" layoutX="1300.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="88.80339050292969" />
+                            <Line fx:id="timelineLine" endX="429.75" endY="12.0" layoutX="819.0" layoutY="89.0" startX="-677.0" startY="12.0" visible="false" />
+                            <Text fx:id="startUnitTag" layoutX="20.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="88.80339050292969" />
+                            <Polyline fx:id="endUnitPolygon" fill="#80ff0000" layoutX="1223.0" layoutY="157.0" points="0.0, -11.66229248046875, 0.0, -101.5, 87.0, -56.5, 0.0, -11.6622314453125" scaleX="0.4" scaleY="0.2" strokeType="INSIDE" strokeWidth="3.0" visible="false" />
+                        </Pane>
+                    </Group>
+                </ScrollPane>
+                <Label fx:id="activeTimelineName" alignment="CENTER" layoutX="453.0" layoutY="90.0" prefHeight="86.0" prefWidth="636.0" textAlignment="CENTER">
+                    <font>
+                        <Font name="Calibri Bold" size="30.0" />
+                    </font>
+                </Label>
+                <Label fx:id="unitName" alignment="CENTER" layoutX="43.0" layoutY="819.0" prefHeight="54.0" prefWidth="1356.0" textAlignment="CENTER">
+                    <font>
+                        <Font name="Calibri Bold" size="30.0" />
+                    </font>
+                </Label>
+                <ImageView fx:id="showZoomSlider" fitHeight="35.0" fitWidth="41.0" layoutX="1380.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                    <image>
+                        <Image url="@../../images/main/zoom-in.png" />
+                    </image>
+                </ImageView>
+                <Polygon fx:id="scrollLeft" fill="#1f93ff00" layoutX="693.0" layoutY="650.0" onMouseClicked="#scrollTimeline" rotate="-90.0" scaleX="0.5" scaleY="0.5" stroke="BLACK" strokeType="INSIDE" styleClass="polygon-left" visible="false">
+                    <points>
+                        <Double fx:value="-50.0" />
+                        <Double fx:value="40.0" />
+                        <Double fx:value="50.0" />
+                        <Double fx:value="40.0" />
+                        <Double fx:value="0.0" />
+                        <Double fx:value="-60.0" />
+                    </points>
+                </Polygon>
+
+                <Polygon fx:id="scrollRight" fill="#1f93ff00" layoutX="746.0" layoutY="650.0" onMouseClicked="#scrollTimeline" rotate="90.0" scaleX="0.5" scaleY="0.5" stroke="BLACK" strokeType="INSIDE" styleClass="polygon-right" visible="false">
+                    <points>
+                        <Double fx:value="-50.0" />
+                        <Double fx:value="40.0" />
+                        <Double fx:value="50.0" />
+                        <Double fx:value="40.0" />
+                        <Double fx:value="0.0" />
+                        <Double fx:value="-60.0" />
+                    </points>
+                </Polygon>
+            </AnchorPane>
+            <Button fx:id="switchThemeBtn" layoutX="20.0" layoutY="872.0" mnemonicParsing="false" onAction="#switchTheme" styleClass="toolButtons" text="Switch Theme" />
+        </Pane>
+    </bottom>
+    <top>
+        <Pane fx:id="topBar" prefHeight="90.0" prefWidth="1440.0" styleClass="toolBar" BorderPane.alignment="CENTER">
+            <ToggleButton fx:id="menuButton" layoutX="7.0" layoutY="45.0" mnemonicParsing="false" onAction="#menuToggle" styleClass="menuButton">
+                <graphic>
+                    <ImageView>
+                        <Image url="@../../images/main/menu/menuButton.png" />
+                    </ImageView>
+                </graphic>
+            </ToggleButton>
+            <Button id="createEventButton" fx:id="createEventButton" layoutX="654.0" layoutY="34.0" mnemonicParsing="false" onAction="#addEventPopup" prefHeight="44.0" prefWidth="171.0" styleClass="toolButtons" text="Add Event" />
+
+         <ToggleButton fx:id="adminMenuButton" layoutX="1239.0" layoutY="34.0" mnemonicParsing="false" onAction="#adminMenuToggle" styleClass="toolButtons" text="Make Admin" />
+         <Button id="editButton" fx:id="editButton" contentDisplay="CENTER" layoutX="1044.0" layoutY="34.0" mnemonicParsing="false" onAction="#editTimeline" prefHeight="44.0" prefWidth="171.0" styleClass="toolButtons" text="Edit Timeline" />
+         <Button id="createButton" fx:id="createButton" contentDisplay="CENTER" layoutX="849.0" layoutY="34.0" mnemonicParsing="false" onAction="#createTimeline" prefHeight="44.0" prefWidth="171.0" styleClass="toolButtons" text="Create Timeline" />
+         <Button id="exportTimelineBtn" fx:id="exportTimelineBtn" layoutX="459.0" layoutY="34.0" mnemonicParsing="false" onAction="#exportTimeline" prefHeight="44.0" prefWidth="171.0" styleClass="toolButtons" text="Export Timeline" />
+        </Pane>
+    </top>
+    <left>
+        <Pane fx:id="menu" prefHeight="0.0" prefWidth="438.0" visible="false" BorderPane.alignment="TOP_LEFT">
+            <ImageView fx:id="menuImage" fitHeight="623.0" fitWidth="443.0" layoutY="-2.0">
+                <Image url="@../../images/main/menu/menu.png" />
+            </ImageView>
+         <Button fx:id="scrollUp" layoutX="106.0" mnemonicParsing="false" onAction="#scroll" styleClass="menuButton">
+            <graphic>
+                  <ImageView>
+                      <Image url="@../../images/main/menu/scrollIcon.png" />
+                  </ImageView>
+            </graphic>
+         </Button>
+            <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutY="20.0" prefHeight="371.0" prefWidth="275.0" vbarPolicy="NEVER" />
+         <Button fx:id="scrollDown" layoutX="106.0" layoutY="391.0" mnemonicParsing="false" onAction="#scroll" styleClass="menuButton">
+            <graphic>
+                  <ImageView rotate="180.0">
+                      <Image url="@../../images/main/menu/scrollIcon.png" />
+                  </ImageView>
+            </graphic>
+         </Button>
+            <Button fx:id="sign" layoutX="-8.0" layoutY="481.0" mnemonicParsing="false" onAction="#logout" styleClass="transBtn" />
+            <Button fx:id="quitBtn" layoutX="-8.0" layoutY="549.0" mnemonicParsing="false" onAction="#quit" styleClass="transBtn">
+                <graphic>
+                    <ImageView fitHeight="67.0" fitWidth="240.0">
+                        <Image url="@../../images/main/menu/quitButton.png" />
+                    </ImageView>
+                </graphic>
+            </Button>
+         <Text fx:id="userName" fill="WHITE" layoutX="6.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="userText">
+            <font>
+               <Font size="13.0" />
+            </font>
+         </Text>
+         <TextField fx:id="searchBar" layoutX="10.0" layoutY="417.0" onKeyReleased="#searchTimeline" prefHeight="35.0" prefWidth="192.0" promptText="Search" />
+        </Pane>
+    </left>
+   <right>
+       <Pane fx:id="adminPane" prefHeight="200.0" prefWidth="200.0" visible="false" BorderPane.alignment="CENTER">
+           <ScrollPane fx:id="adminMenuScrollPane" hbarPolicy="NEVER" prefHeight="371.0" prefWidth="200.0" />
+       </Pane>
+   </right>
+</BorderPane>

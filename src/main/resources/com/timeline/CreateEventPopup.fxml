@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="523.0" prefWidth="403.0" styleClass="root" stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.timeline.CreateEventPopupController">
+    <children>
+        <AnchorPane layoutX="50.0" layoutY="50.0" prefHeight="406.0" prefWidth="304.0" styleClass="logIn" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="50.0">
+            <effect>
+                <DropShadow color="#00000071" height="60.23" radius="36.405" width="87.39" />
+            </effect>
+            <children>
+                <VBox layoutX="50.0" layoutY="8.0" prefHeight="108.0" prefWidth="304.0" styleClass="logIn" AnchorPane.bottomAnchor="324.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <effect>
+                        <ColorAdjust brightness="-0.03" saturation="0.05" />
+                    </effect>
+                    <children>
+                        <Text fill="#6f6f6f" stroke="#161228" strokeType="OUTSIDE" strokeWidth="0.0" text="ADD EVENT" textAlignment="CENTER" wrappingWidth="303.67578125">
+                            <VBox.margin>
+                                <Insets top="15.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Text>
+                        <Label fx:id="eventIDLabel" alignment="CENTER" prefHeight="17.0" prefWidth="309.0" />
+                    </children>
+                </VBox>
+                <TextField fx:id="eventName" layoutX="30.0" layoutY="67.0" onKeyReleased="#checkName" promptText="Event name" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="67.0" />
+            <TextField fx:id="eventTime" layoutX="30.0" layoutY="107.0" onKeyReleased="#checkTime" promptText="Time" />
+            <TextField fx:id="eventShortDesc" layoutX="30.0" layoutY="151.0" onKeyReleased="#checkShortDesc" prefHeight="25.0" prefWidth="244.0" promptText="Short description" />
+            <TextArea fx:id="eventLongDesc" layoutX="30.0" layoutY="196.0" onKeyPressed="#setLongDescAreaBehaviour" prefRowCount="3" prefWidth="244.0" promptText="Long description" wrapText="true" />
+            <Button fx:id="imageButton" layoutX="155.0" layoutY="300.0" mnemonicParsing="false" onAction="#addPicture" prefWidth="127.0" text="Choose image" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="22.0" />
+            <ImageView fx:id="chosenImage" fitHeight="81.0" fitWidth="119.0" layoutX="22.0" layoutY="279.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="163.0" />
+                <Button fx:id="eventOK" layoutX="12.0" layoutY="249.0" mnemonicParsing="false" onAction="#addEvent" prefWidth="119.0" text="Ok" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="163.0" />
+                <Button fx:id="eventCancel" layoutX="12.0" layoutY="296.0" mnemonicParsing="false" onAction="#closeEventPopUp" text="Cancel" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="22.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

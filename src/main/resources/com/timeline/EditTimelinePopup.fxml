@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="523.0" prefWidth="403.0" styleClass="root" stylesheets="@../../css/styles.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.timeline.EditTimelinePopupController">
+    <children>
+        <AnchorPane layoutX="50.0" layoutY="50.0" prefHeight="406.0" prefWidth="304.0" styleClass="logIn" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="50.0">
+            <effect>
+                <DropShadow color="#00000071" height="60.23" radius="36.405" width="87.39" />
+            </effect>
+            <children>
+                <VBox layoutX="50.0" layoutY="8.0" prefHeight="110.0" prefWidth="304.0" styleClass="logIn" AnchorPane.bottomAnchor="314.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <effect>
+                        <ColorAdjust brightness="-0.03" saturation="0.05" />
+                    </effect>
+                    <children>
+                        <Text fill="#6f6f6f" stroke="#161228" strokeType="OUTSIDE" strokeWidth="0.0" text="EDIT TIMELINE" textAlignment="CENTER" wrappingWidth="303.67578125">
+                            <VBox.margin>
+                                <Insets top="15.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Text>
+                    </children>
+                </VBox>
+                <TextField fx:id="editTimelineName" layoutX="30.0" layoutY="73.0" promptText="Name" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="73.0" />
+                <Label fx:id="editNameErrorLabel" layoutX="31.0" layoutY="99.0" prefHeight="17.0" prefWidth="240.0" text="" textFill="#e80505">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </Label>
+                <MenuButton fx:id="editUnitsMenuButton" alignment="CENTER_RIGHT" layoutX="30.0" layoutY="120.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="161.0" text="Unit of time" textFill="WHITE" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="120.0">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleSelectedTimeUnit" text="Billion years" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSelectedTimeUnit" text="Million years" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSelectedTimeUnit" text="Millenniums" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSelectedTimeUnit" text="Centuries" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSelectedTimeUnit" text="Decades" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSelectedTimeUnit" text="Years" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSelectedTimeUnit" text="Months" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSelectedTimeUnit" text="Days" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSelectedTimeUnit" text="Hours" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSelectedTimeUnit" text="Minutes" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSelectedTimeUnit" text="Seconds" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSelectedTimeUnit" text="Milliseconds" />
+                    </items>
+                </MenuButton>
+                <Label fx:id="editUnitErrorLabel" layoutX="30.0" layoutY="152.0" prefHeight="17.0" prefWidth="240.0" text="" textFill="#e80505">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </Label>
+                <Button fx:id="editCancel" layoutX="12.0" layoutY="296.0" mnemonicParsing="false" onAction="#closePopUp" text="Cancel" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="155.0" AnchorPane.rightAnchor="22.0" />
+                <Button layoutX="12.0" layoutY="249.0" mnemonicParsing="false" onAction="#onSubmit" prefWidth="119.0" text="Ok" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="163.0" />
+                <TextField fx:id="editStartTime" layoutX="30.0" layoutY="173.0" promptText="Start" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="155.0" AnchorPane.topAnchor="185.0" />
+                <TextField fx:id="editEndTime" layoutX="158.0" layoutY="173.0" promptText="End" AnchorPane.leftAnchor="158.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="185.0" />
+                <Label fx:id="editStartEndErrorLabel" layoutX="30.0" layoutY="199.0" prefHeight="17.0" prefWidth="240.0" text="" textFill="#e80505">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="editKeywordEntered" layoutX="30.0" layoutY="219.0" prefHeight="27.0" prefWidth="209.0" promptText="Keyword" />
+
+
+                <StackPane fx:id="editShowWhen" layoutX="31.0" layoutY="255.0" prefHeight="88.0" prefWidth="240.0" visible="false">
+                    <children>
+                        <ListView fx:id="editDisplayKeywords" editable="true" prefHeight="110.0" prefWidth="245.0" />
+                    </children>
+                </StackPane>
+                <Label fx:id="editOtherErrorsLabel" layoutX="21.0" layoutY="343.0" prefHeight="23.0" prefWidth="263.0" text="" textFill="#e80505">
+                    <font>
+                        <Font size="12.0" />
+                    </font>
+                </Label>
+            <CheckBox fx:id="editConvertTime" layoutX="30.0" layoutY="161.0" mnemonicParsing="false" onAction="#convertTime" text="Convert current timeline" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
