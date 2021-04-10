@@ -1,6 +1,6 @@
 # TimeWaves - A Timeline Application
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![Timewaves Start Page](https://github.com/eliasfrigard/Timewaves/blob/master/docs/timewaves-image.png?raw=true)
 
 ***
 ## Table of contents
